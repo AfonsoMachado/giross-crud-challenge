@@ -18,7 +18,7 @@ export class User {
   name: string;
 
   @ApiProperty()
-  @Column()
+  @Column({ unique: true })
   email: string;
 
   @ApiProperty()
@@ -34,10 +34,12 @@ export class User {
   gender: string;
 
   @ApiProperty()
+  @Column()
   @CreateDateColumn()
   createdAt: Date;
 
   @ApiProperty()
+  @Column()
   @UpdateDateColumn()
   updatedAt: Date;
 }

@@ -2,6 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication, ValidationPipe } from '@nestjs/common';
 import * as request from 'supertest';
 import { AppModule } from './../src/app.module';
+import { registerAndAuthUser } from './utils/auth-user';
 
 describe('AppController (e2e)', () => {
   let app: INestApplication;
@@ -23,10 +24,21 @@ describe('AppController (e2e)', () => {
     process.env.NODE_ENV = '';
   });
 
-  it('/ (GET)', () => {
-    return request(app.getHttpServer())
-      .get('/')
-      .expect(200)
-      .expect({ status: 'OK' });
+  it('/test (GET)', async () => {
+    const { token } = await registerAndAuthUser();
+
+    return await request(app.getHttpServer())
+      .get('/auth/test')
+      .set('Authorization', `Bearer ${token}`)
+      .expect(200);
+  });
+
+  it('/test (GET) - Error 401', async () => {
+    return await request(app.getHttpServer())
+      .get('/auth/test')
+      .expect(401)
+      .then((response) =>
+        expect(response.body.message).toEqual('Unauthorized'),
+      );
   });
 });
