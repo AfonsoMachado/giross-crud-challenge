@@ -1,5 +1,5 @@
 <table align="center"><tr><td align="center" width="9999">
-<a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="150" alt="Nest Logo" /></a>
+<a href="https://giross.com.br/" target="blank"><img src="https://giross.com.br/assets/images/logo2.png" width="150" alt="Nest Logo" /></a>
 
 <h2>NestJS | CRUD de usuários com autenticação JWT</h2>
 
@@ -17,9 +17,9 @@
 
 ## Descrição do Projeto
 
-Este projeto é uma API de cadastros de usuários, contendo todos os endpoints básicos de um CRUD, além de uma autenticação via JWT. Foi completamente construído usando o framework [NestJS](https://nestjs.com/) e seus módulos para auxílio no desenvolvimento.
+Este projeto é uma API de cadastros de usuários, desenvolvido no processo seletivo de contratação da empresa [Giross](https://giross.com.br/), contendo todos os endpoints básicos de um CRUD, além de uma autenticação via JWT. Foi completamente construído usando o framework [NestJS](https://nestjs.com/) e seus módulos para auxílio no desenvolvimento.
 
-Além da API, neste projeto está contida uma integração com um banco de dados local SQLite usando TypeORM, documentação utilizado Swagger e testes E2E para validação do funcionamento da API.
+Além da API, neste projeto está contida uma integração com um banco de dados MySQL usando TypeORM, documentação utilizado Swagger e testes E2E para validação do funcionamento da API.
 
 ## :computer: Tecnologias
 
@@ -67,10 +67,16 @@ JWT_SECRET=<YOUR_JWT_SECRET>
 # Limite de expiração do token JWT
 JWT_EXPIRESIN=1h
 
-# Caminho para o banco de dados príncipal
-DB_PATH='./database/database.sqlite'
-# Caminho para o banco de dados de teste
-DB_TEST_PATH='./database/database-test.sqlite'
+# Host do banco de dados MySQL
+DB_HOST=<YOUR_DB_HOST>
+# Port do banco de dados MySQL
+DB_PORT=<YOUR_DB_PORT>
+# Nome de usuário do banco de dados MySQL
+DB_USERNAME=<YOUR_DB_USERNAME>
+# Senha de usuário do banco de dados MySQL
+DB_PASSWORD=<YOUR_DB_PASSWORD>
+# Nome do banco de dados (Deve ser criado previamente para o correto funcionamento)
+DB_NAME='giross_challenge'
 ```
 
 ## :fire: Executando o projeto
