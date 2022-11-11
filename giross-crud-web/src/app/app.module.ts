@@ -18,9 +18,10 @@ import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { HomeComponent } from './views/home/home.component';
 import { CustomerCrudComponent } from './views/customer-crud/customer-crud.component';
+import { CustomerCreateComponent } from './components/customer/customer-create/customer-create.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, NavComponent, HomeComponent, CustomerCrudComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, NavComponent, HomeComponent, CustomerCrudComponent, CustomerCreateComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
