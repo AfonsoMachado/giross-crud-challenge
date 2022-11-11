@@ -1,7 +1,7 @@
 <table align="center"><tr><td align="center" width="9999">
 <a href="https://giross.com.br/" target="blank"><img src="https://giross.com.br/assets/images/logo2.png" width="150" alt="Nest Logo" /></a>
 
-<h2>NestJS | CRUD de usuários com autenticação JWT</h2>
+<h2>CRUD de usuários com autenticação JWT</h2>
 
 <p align="center">
   <a href="#descrição-do-projeto">Descrição do Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -35,7 +35,7 @@ Tecnologias utilizadas para o desenvolvimento da API:
 - [Npm](https://www.npmjs.com/)
 - [Passport](https://www.passportjs.org/)
 - [passport-jwt](https://github.com/mikenicholson/passport-jwt)
-- [SQLite3](https://github.com/TryGhost/node-sqlite3)
+- [Node MySQL 2](https://www.npmjs.com/package/mysql2)
 - [SuperTest](https://www.npmjs.com/package/supertest/)
 - [Swagger](https://swagger.io/)
 - [TypeORM](https://typeorm.io/)
@@ -83,8 +83,9 @@ DB_NAME='giross_challenge'
 
 ### Requisitos Necessários
 
-- [Node.js](https://nodejs.org/en/) (Foi utilizada a versão 16.16.0 durante o desenvolvimento)
+- [Node.js](https://nodejs.org/en/) (Foi utilizada a versão 18.12.1 durante o desenvolvimento)
 - [npm](https://www.npmjs.com/) ou [Yarn](https://classic.yarnpkg.com/)
+- SGBD MySQL com o banco de dados pré criado, com o nome indicado nas variáveis de ambiente (Foi utilizado o [XAMPP](https://www.apachefriends.org/pt_br/index.html) durante o desenvolvimento)
 
 **Instalação e execução**
 
