@@ -16,9 +16,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
+import { HomeComponent } from './views/home/home.component';
+import { CustomerCrudComponent } from './views/customer-crud/customer-crud.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, NavComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, NavComponent, HomeComponent, CustomerCrudComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
