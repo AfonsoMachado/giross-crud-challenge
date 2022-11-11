@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
@@ -27,6 +28,7 @@ import { NavComponent } from './components/template/nav/nav.component';
     MatListModule,
     MatSidenavModule,
     MatCardModule,
+    MatIconModule,
     MatButtonModule,
     MatSnackBarModule,
     MatFormFieldModule,
