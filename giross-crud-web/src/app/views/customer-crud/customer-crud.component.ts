@@ -11,7 +11,7 @@ export class CustomerCrudComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  navigateToProductCreate(): void {
+  navigateToCustomerCreate(): void {
     this.router.navigate(['/customers/create']);
   }
 }

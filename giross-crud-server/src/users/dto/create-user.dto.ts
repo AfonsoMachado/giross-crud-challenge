@@ -12,7 +12,7 @@ export class CreateUserDto {
   email: string;
 
   @ApiProperty()
-  @IsNotEmpty({ message: 'É necessário informar a senha.' })
+  // @IsNotEmpty({ message: 'É necessário informar a senha.' })
   password: string;
 
   @ApiProperty()

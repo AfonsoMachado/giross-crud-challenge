@@ -28,6 +28,8 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
   app.useGlobalFilters(new GlobalExceptionFilter());
 
+  app.enableCors();
+
   const configService = app.get(ConfigService) as ConfigService<any>;
   swaggerConfig(app, configService);
 

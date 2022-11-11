@@ -19,9 +19,19 @@ import { NavComponent } from './components/template/nav/nav.component';
 import { HomeComponent } from './views/home/home.component';
 import { CustomerCrudComponent } from './views/customer-crud/customer-crud.component';
 import { CustomerCreateComponent } from './components/customer/customer-create/customer-create.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, NavComponent, HomeComponent, CustomerCrudComponent, CustomerCreateComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    NavComponent,
+    HomeComponent,
+    CustomerCrudComponent,
+    CustomerCreateComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -36,6 +46,8 @@ import { CustomerCreateComponent } from './components/customer/customer-create/c
     MatSnackBarModule,
     MatFormFieldModule,
     MatInputModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
