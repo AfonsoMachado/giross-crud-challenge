@@ -31,7 +31,7 @@ export class User {
 
   @ApiProperty()
   @Column()
-  gender: string;
+  sex: string;
 
   @ApiProperty()
   @Column()

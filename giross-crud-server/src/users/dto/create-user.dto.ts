@@ -19,5 +19,5 @@ export class CreateUserDto {
   phone: string;
 
   @ApiProperty()
-  gender: string;
+  sex: string;
 }

@@ -13,6 +13,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
 import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
@@ -21,6 +22,7 @@ import { CustomerCrudComponent } from './views/customer-crud/customer-crud.compo
 import { CustomerCreateComponent } from './components/customer/customer-create/customer-create.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CustomerReadComponent } from './components/customer/customer-read/customer-read.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     CustomerCrudComponent,
     CustomerCreateComponent,
+    CustomerReadComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +49,7 @@ import { FormsModule } from '@angular/forms';
     MatSnackBarModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
     HttpClientModule,
     FormsModule,
   ],

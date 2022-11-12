@@ -14,7 +14,7 @@ export class CustomerCreateComponent implements OnInit {
     name: '',
     email: '',
     phone: '',
-    gender: '',
+    sex: '',
   };
 
   constructor(

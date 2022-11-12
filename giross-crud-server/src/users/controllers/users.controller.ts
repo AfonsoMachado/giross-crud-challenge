@@ -42,7 +42,7 @@ export class UsersController {
     return await this.usersService.create(createUserDto);
   }
 
-  @AuthUser()
+  // @AuthUser()
   @ApiOperation({
     summary: 'Lista todos os usuários',
   })
@@ -56,7 +56,7 @@ export class UsersController {
     return this.usersService.findAll();
   }
 
-  @AuthUser()
+  // @AuthUser()
   @ApiOperation({
     summary: 'Encontra um usuário por ID',
   })
@@ -72,7 +72,7 @@ export class UsersController {
     return this.usersService.findOne(Number(id));
   }
 
-  @AuthUser()
+  // @AuthUser()
   @ApiOperation({
     summary: 'Altera os dados de um usuário por ID',
   })
@@ -91,7 +91,7 @@ export class UsersController {
     return await this.usersService.update(Number(id), updateUserDto);
   }
 
-  @AuthUser()
+  // @AuthUser()
   @ApiOperation({
     summary: 'Deleta um usuário por ID',
   })

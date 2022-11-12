@@ -5,7 +5,7 @@ export function generateUser() {
     name: name.firstName(),
     email: internet.email().toLocaleLowerCase(),
     password: random.alphaNumeric(8),
-    gender: name.gender(),
+    sex: name.sex(),
     phone: phone.phoneNumber(),
   };
 }

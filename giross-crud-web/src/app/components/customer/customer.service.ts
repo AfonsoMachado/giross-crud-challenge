@@ -21,7 +21,11 @@ export class CustomerService {
     });
   }
 
-  create(product: Customer): Observable<Customer> {
-    return this.http.post<Customer>(this.baseUrl + '/users', product);
+  create(customer: Customer): Observable<Customer> {
+    return this.http.post<Customer>(this.baseUrl + '/users', customer);
+  }
+
+  read(): Observable<Customer[]> {
+    return this.http.get<Customer[]>(this.baseUrl + '/users');
   }
 }
