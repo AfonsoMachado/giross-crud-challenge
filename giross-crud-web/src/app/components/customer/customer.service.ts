@@ -22,10 +22,20 @@ export class CustomerService {
   }
 
   create(customer: Customer): Observable<Customer> {
-    return this.http.post<Customer>(this.baseUrl + '/users', customer);
+    return this.http.post<Customer>(`${this.baseUrl}/users`, customer);
   }
 
   read(): Observable<Customer[]> {
-    return this.http.get<Customer[]>(this.baseUrl + '/users');
+    return this.http.get<Customer[]>(`${this.baseUrl}/users`);
+  }
+
+  readById(id: number): Observable<Customer> {
+    const url = `${this.baseUrl}/users/${id}`;
+    return this.http.get<Customer>(url);
+  }
+
+  update(customer: Customer): Observable<Customer> {
+    const url = `${this.baseUrl}/users/${customer.id}`;
+    return this.http.patch<Customer>(url, customer);
   }
 }

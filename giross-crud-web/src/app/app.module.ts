@@ -23,6 +23,8 @@ import { CustomerCreateComponent } from './components/customer/customer-create/c
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CustomerReadComponent } from './components/customer/customer-read/customer-read.component';
+import { CustomerUpdateComponent } from './components/customer/customer-update/customer-update.component';
+import { CustomerDeleteComponent } from './components/customer/customer-delete/customer-delete.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { CustomerReadComponent } from './components/customer/customer-read/custo
     CustomerCrudComponent,
     CustomerCreateComponent,
     CustomerReadComponent,
+    CustomerUpdateComponent,
+    CustomerDeleteComponent,
   ],
   imports: [
     BrowserModule,

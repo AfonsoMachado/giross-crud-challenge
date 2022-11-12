@@ -12,7 +12,7 @@ export class CustomerReadComponent implements OnInit {
 
   customers: Customer[] = [];
 
-  displayedColumns = ['name', 'email', 'phone', 'sex'];
+  displayedColumns = ['name', 'email', 'phone', 'sex', 'action'];
 
   ngOnInit(): void {
     this.customersService.read().subscribe((customers) => {
