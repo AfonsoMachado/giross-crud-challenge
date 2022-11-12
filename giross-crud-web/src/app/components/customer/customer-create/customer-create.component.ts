@@ -36,6 +36,7 @@ export class CustomerCreateComponent implements OnInit {
         this.router.navigate(['/customers']);
       },
       error: (error: HttpErrorResponse) => {
+        console.error(error);
         this.customerService.showMessage(
           'Preencha todos os campos corretamente!'
         );
