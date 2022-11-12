@@ -1,1 +1,14 @@
-<p>customer-delete works!</p>
+<mat-card>
+  <mat-card-title>Excluir Produto</mat-card-title>
+
+  <app-customer-form
+    formType="delete"
+    [customer]="this.customer"
+  ></app-customer-form>
+
+  <button mat-raised-button (click)="deleteProduct()" color="warn">
+    Excluir
+  </button>
+
+  <button mat-raised-button (click)="cancel()">Cancelar</button>
+</mat-card>

@@ -25,6 +25,9 @@ import { FormsModule } from '@angular/forms';
 import { CustomerReadComponent } from './components/customer/customer-read/customer-read.component';
 import { CustomerUpdateComponent } from './components/customer/customer-update/customer-update.component';
 import { CustomerDeleteComponent } from './components/customer/customer-delete/customer-delete.component';
+import { CustomerFormComponent } from './components/customer/customer-form/customer-form.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,7 @@ import { CustomerDeleteComponent } from './components/customer/customer-delete/c
     CustomerReadComponent,
     CustomerUpdateComponent,
     CustomerDeleteComponent,
+    CustomerFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +57,8 @@ import { CustomerDeleteComponent } from './components/customer/customer-delete/c
     MatSnackBarModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
+    MatOptionModule,
     MatTableModule,
     HttpClientModule,
     FormsModule,

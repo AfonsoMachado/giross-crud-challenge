@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Customer } from '../customer.model';
 import { CustomerService } from '../customer.service';
@@ -15,8 +16,17 @@ export class CustomerReadComponent implements OnInit {
   displayedColumns = ['name', 'email', 'phone', 'sex', 'action'];
 
   ngOnInit(): void {
-    this.customersService.read().subscribe((customers) => {
-      this.customers = customers;
+    this.customersService.read().subscribe({
+      next: (customers) => {
+        this.customers = customers;
+      },
+      error: (error: HttpErrorResponse) => {
+        if (error.error.statusCode === 400) {
+          this.customersService.showMessage(error.error.message);
+        } else {
+          this.customersService.showMessage('Erro');
+        }
+      },
     });
   }
 }

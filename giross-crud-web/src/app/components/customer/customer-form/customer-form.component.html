@@ -1,0 +1,48 @@
+<form class="flex flex-col mt-5">
+  <div class="form-row w-full flex">
+    <mat-form-field class="w-1/2 mr-3">
+      <input
+        matInput
+        placeholder="Nome Completo"
+        [(ngModel)]="customer.name"
+        name="name"
+        (input)="nameChanging()"
+        [disabled]="formType === 'delete'"
+      />
+    </mat-form-field>
+    <mat-form-field class="w-1/2">
+      <input
+        matInput
+        placeholder="E-mail"
+        [(ngModel)]="customer.email"
+        name="email"
+        (input)="nameChanging()"
+        [disabled]="formType === 'delete'"
+      />
+    </mat-form-field>
+  </div>
+  <div class="form-row w-full flex">
+    <mat-form-field class="w-1/2 mr-3">
+      <input
+        matInput
+        placeholder="Telefone"
+        [(ngModel)]="customer.phone"
+        name="phone"
+        (input)="nameChanging()"
+        [disabled]="formType === 'delete'"
+      />
+    </mat-form-field>
+    <mat-form-field class="w-1/2">
+      <mat-label>Sexo</mat-label>
+      <mat-select
+        [(ngModel)]="customer.sex"
+        name="customer sex"
+        (input)="nameChanging()"
+        [disabled]="formType === 'delete'"
+      >
+        <mat-option value="Masculino"> Masculino </mat-option>
+        <mat-option value="Feminino"> Feminino </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</form>

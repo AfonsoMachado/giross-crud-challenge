@@ -24,7 +24,12 @@ export class CustomerCreateComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  handler(customer: Customer) {
+    this.customer = customer;
+  }
+
   createCustomer(): void {
+    console.log(this.customer);
     this.customerService.create(this.customer).subscribe({
       next: () => {
         this.customerService.showMessage('Cliente criado!');

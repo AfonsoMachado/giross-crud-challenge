@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Customer } from '../customer.model';
@@ -23,13 +24,20 @@ export class CustomerUpdateComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    const id = parseInt(this.route.snapshot.paramMap.get('id') as string);
+    const id = +(this.route.snapshot.paramMap.get('id') as string);
     this.customerService.readById(id).subscribe({
       next: (customer) => {
         this.customer = customer;
       },
-      error: (error) => console.error(error),
+      error: (error: HttpErrorResponse) => {
+        console.error(error);
+        this.customerService.showMessage('Erro');
+      },
     });
+  }
+
+  handler(customer: Customer) {
+    this.customer = customer;
   }
 
   updateCustomer(): void {
@@ -38,7 +46,10 @@ export class CustomerUpdateComponent implements OnInit {
         this.customerService.showMessage('Cliente atualizado com sucesso');
         this.router.navigate(['/customers']);
       },
-      error: (error) => console.error(error),
+      error: (error: HttpErrorResponse) => {
+        console.error(error);
+        this.customerService.showMessage('Erro');
+      },
     });
   }
 

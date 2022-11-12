@@ -38,4 +38,9 @@ export class CustomerService {
     const url = `${this.baseUrl}/users/${customer.id}`;
     return this.http.patch<Customer>(url, customer);
   }
+
+  delete(id: number): Observable<Customer> {
+    const url = `${this.baseUrl}/users/${id}`;
+    return this.http.delete<Customer>(url);
+  }
 }

@@ -1,43 +1,7 @@
 <mat-card>
   <mat-card-title>Novo Cliente</mat-card-title>
-  <form class="flex flex-col mt-5">
-    <div class="form-row w-full flex">
-      <mat-form-field class="w-1/2 mr-3">
-        <input
-          matInput
-          placeholder="Nome Completo"
-          [(ngModel)]="customer.name"
-          name="name"
-        />
-      </mat-form-field>
-      <mat-form-field class="w-1/2">
-        <input
-          matInput
-          placeholder="E-mail"
-          [(ngModel)]="customer.email"
-          name="email"
-        />
-      </mat-form-field>
-    </div>
-    <div class="form-row w-full flex">
-      <mat-form-field class="w-1/2 mr-3">
-        <input
-          matInput
-          placeholder="Telefone"
-          [(ngModel)]="customer.phone"
-          name="phone"
-        />
-      </mat-form-field>
-      <mat-form-field class="w-1/2">
-        <input
-          matInput
-          placeholder="Sexo"
-          [(ngModel)]="customer.sex"
-          name="sex"
-        />
-      </mat-form-field>
-    </div>
-  </form>
+
+  <app-customer-form (nameChange)="handler($event)"></app-customer-form>
 
   <button mat-raised-button (click)="createCustomer()" color="primary">
     Salvar
