@@ -1,11 +1,11 @@
-import { internet, random, name, phone } from 'faker/locale/pt_BR';
+import { faker } from '@faker-js/faker/locale/pt_BR';
 
 export function generateUser() {
   return {
-    name: name.firstName(),
-    email: internet.email().toLocaleLowerCase(),
-    password: random.alphaNumeric(8),
-    sex: name.sex(),
-    phone: phone.phoneNumber(),
+    name: faker.name.fullName(),
+    email: faker.internet.email().toLocaleLowerCase(),
+    password: faker.random.alphaNumeric(8),
+    sex: faker.name.sex(),
+    phone: faker.phone.number(),
   };
 }
