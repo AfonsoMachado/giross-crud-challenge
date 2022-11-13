@@ -1,8 +1,7 @@
+.env
+
 # Compiled output
 /dist
-/tmp
-/out-tsc
-/bazel-out
 
 # Node
 /node_modules
@@ -38,3 +37,16 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# compiled output
+/dist
+/node_modules
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
