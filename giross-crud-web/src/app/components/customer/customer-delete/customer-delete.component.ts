@@ -36,7 +36,7 @@ export class CustomerDeleteComponent implements OnInit {
     });
   }
 
-  deleteProduct(): void {
+  deleteCustomer(): void {
     this.customerService.delete(this.customer.id as number).subscribe({
       next: () => {
         this.customerService.showMessage('Cliente excluido com sucesso!');
