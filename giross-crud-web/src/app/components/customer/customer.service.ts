@@ -38,7 +38,8 @@ export class CustomerService {
 
   create(customer: Customer): Observable<Customer> {
     const url = `${this.baseUrl}/users`;
-    return this.http.post<Customer>(url, customer);
+    const headers = this.getHeaders();
+    return this.http.post<Customer>(url, customer, { headers });
   }
 
   read(): Observable<Customer[]> {

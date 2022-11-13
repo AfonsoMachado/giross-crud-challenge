@@ -32,10 +32,12 @@ describe('AppController (e2e)', () => {
   });
 
   it('/users (POST)', async () => {
+    const { token } = await authAdmin();
     const user = generateUser();
 
     return request(app.getHttpServer())
       .post('/users')
+      .set('Authorization', `Bearer ${token}`)
       .send(user)
       .expect(201)
       .then((response) => {
@@ -47,6 +49,7 @@ describe('AppController (e2e)', () => {
     const { token } = await authAdmin();
     const user = await request(app.getHttpServer())
       .post('/users')
+      .set('Authorization', `Bearer ${token}`)
       .send(generateUser())
       .then((response) => response.body);
 
@@ -63,6 +66,7 @@ describe('AppController (e2e)', () => {
     const { token } = await authAdmin();
     const user = await request(app.getHttpServer())
       .post('/users')
+      .set('Authorization', `Bearer ${token}`)
       .send(generateUser())
       .then((response) => response.body);
 
@@ -79,6 +83,7 @@ describe('AppController (e2e)', () => {
     const { token } = await authAdmin();
     const user = await request(app.getHttpServer())
       .post('/users')
+      .set('Authorization', `Bearer ${token}`)
       .send(generateUser())
       .then((response) => response.body);
 
@@ -98,6 +103,7 @@ describe('AppController (e2e)', () => {
 
     const user = await request(app.getHttpServer())
       .post('/users')
+      .set('Authorization', `Bearer ${token}`)
       .send(generateUser())
       .then((response) => response.body);
 
@@ -119,6 +125,7 @@ describe('AppController (e2e)', () => {
     const { token } = await authAdmin();
     const user = await request(app.getHttpServer())
       .post('/users')
+      .set('Authorization', `Bearer ${token}`)
       .send(generateUser())
       .then((response) => response.body);
 
@@ -146,6 +153,7 @@ describe('AppController (e2e)', () => {
     const { token } = await authAdmin();
     const user = await request(app.getHttpServer())
       .post('/users')
+      .set('Authorization', `Bearer ${token}`)
       .send(generateUser())
       .then((response) => response.body);
 
@@ -173,6 +181,7 @@ describe('AppController (e2e)', () => {
     const { token } = await authAdmin();
     const user = await request(app.getHttpServer())
       .post('/users')
+      .set('Authorization', `Bearer ${token}`)
       .send(generateUser())
       .then((response) => response.body);
 

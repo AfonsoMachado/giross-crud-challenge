@@ -29,6 +29,7 @@ import { UserNotFoundError } from '../decorators/user-unauthorized-error.decorat
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
+  @AuthUser()
   @ApiOperation({
     summary: 'Cria um usuário',
   })
