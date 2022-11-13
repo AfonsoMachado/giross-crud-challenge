@@ -5,6 +5,7 @@
     opened
     fixedInViewport="true"
     fixedTopGap="64"
+    *ngIf="!showSidenav()"
   >
     <mat-nav-list>
       <a mat-list-item routerLink="/">
@@ -14,6 +15,10 @@
       <a mat-list-item routerLink="/customers">
         <mat-icon class="mr-4 text-white"> person </mat-icon>
         <span class="text-white"> Clientes </span>
+      </a>
+      <a mat-list-item (click)="logout()">
+        <mat-icon class="mr-4 text-white"> exit_to_app </mat-icon>
+        <span class="text-white"> Sair </span>
       </a>
     </mat-nav-list>
   </mat-sidenav>

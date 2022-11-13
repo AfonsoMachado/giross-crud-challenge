@@ -29,7 +29,6 @@ export class CustomerCreateComponent implements OnInit {
   }
 
   createCustomer(): void {
-    console.log(this.customer);
     this.customerService.create(this.customer).subscribe({
       next: () => {
         this.customerService.showMessage('Cliente criado!');

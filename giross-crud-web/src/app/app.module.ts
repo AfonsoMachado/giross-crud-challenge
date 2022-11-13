@@ -28,6 +28,7 @@ import { CustomerDeleteComponent } from './components/customer/customer-delete/c
 import { CustomerFormComponent } from './components/customer/customer-form/customer-form.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import { AdminLoginComponent } from './views/admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { MatOptionModule } from '@angular/material/core';
     CustomerUpdateComponent,
     CustomerDeleteComponent,
     CustomerFormComponent,
+    AdminLoginComponent,
   ],
   imports: [
     BrowserModule,

@@ -30,6 +30,10 @@
         name="phone"
         (input)="nameChanging()"
         [disabled]="formType === 'delete'"
+        type="tel"
+        size="11"
+        minlength="9"
+        maxlength="11"
       />
     </mat-form-field>
     <mat-form-field class="w-1/2">
