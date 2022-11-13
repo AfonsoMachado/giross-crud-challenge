@@ -16,8 +16,8 @@ export class CreateUserDto {
   password: string;
 
   @ApiProperty()
-  phone: string;
+  phone?: string;
 
   @ApiProperty()
-  sex: string;
+  sex?: string;
 }

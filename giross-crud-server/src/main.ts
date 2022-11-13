@@ -4,6 +4,7 @@ import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { GlobalExceptionFilter } from './common/errors/global-exception.filter';
+import { SeedsService } from './seeds/seeds.service';
 
 function swaggerConfig(
   app: INestApplication,
@@ -32,6 +33,8 @@ async function bootstrap() {
 
   const configService = app.get(ConfigService) as ConfigService<any>;
   swaggerConfig(app, configService);
+
+  await app.get<SeedsService>(SeedsService).start();
 
   const port = configService.get('PORT');
   if (!port) throw new Error('A porta da aplicação não foi configurada.');

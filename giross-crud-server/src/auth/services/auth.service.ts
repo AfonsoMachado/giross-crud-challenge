@@ -32,9 +32,7 @@ export class AuthService {
     const user = await this.usersService.findByEmail(login.email);
 
     if (!user)
-      throw new NotFoundException(
-        `Usuário de não encontrado na base de dados.`,
-      );
+      throw new NotFoundException(`Usuário não encontrado na base de dados.`);
 
     const passMatch = await this.usersService.comparePassword(
       login.password,
