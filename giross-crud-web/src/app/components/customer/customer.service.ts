@@ -12,6 +12,7 @@ export class CustomerService {
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
   baseUrl = environment.baseUrl;
+  accessToken = this.getToken();
 
   showMessage(msg: string): void {
     this.snackBar.open(msg, 'X', {
@@ -21,26 +22,46 @@ export class CustomerService {
     });
   }
 
+  getHeaders(): any {
+    const headers: any = {
+      'Content-type': 'application/json',
+    };
+    headers.Authorization = `Bearer ${this.accessToken}`;
+    return headers;
+  }
+
+  getToken(): string {
+    const tokenPayload = localStorage.getItem('USER_TOKEN');
+    if (!tokenPayload) return '';
+    return JSON.parse(tokenPayload).access_token;
+  }
+
   create(customer: Customer): Observable<Customer> {
-    return this.http.post<Customer>(`${this.baseUrl}/users`, customer);
+    const url = `${this.baseUrl}/users`;
+    return this.http.post<Customer>(url, customer);
   }
 
   read(): Observable<Customer[]> {
-    return this.http.get<Customer[]>(`${this.baseUrl}/users`);
+    const url = `${this.baseUrl}/users`;
+    const headers = this.getHeaders();
+    return this.http.get<Customer[]>(url, { headers });
   }
 
   readById(id: number): Observable<Customer> {
     const url = `${this.baseUrl}/users/${id}`;
-    return this.http.get<Customer>(url);
+    const headers = this.getHeaders();
+    return this.http.get<Customer>(url, { headers });
   }
 
   update(customer: Customer): Observable<Customer> {
     const url = `${this.baseUrl}/users/${customer.id}`;
-    return this.http.patch<Customer>(url, customer);
+    const headers = this.getHeaders();
+    return this.http.patch<Customer>(url, customer, { headers });
   }
 
   delete(id: number): Observable<Customer> {
     const url = `${this.baseUrl}/users/${id}`;
-    return this.http.delete<Customer>(url);
+    const headers = this.getHeaders();
+    return this.http.delete<Customer>(url, { headers });
   }
 }
