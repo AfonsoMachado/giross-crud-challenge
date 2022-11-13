@@ -4,7 +4,7 @@ export function generateUser() {
   return {
     name: faker.name.fullName(),
     email: faker.internet.email().toLocaleLowerCase(),
-    password: faker.random.alphaNumeric(8),
+    password: '',
     sex: faker.name.sex(),
     phone: faker.phone.number(),
   };

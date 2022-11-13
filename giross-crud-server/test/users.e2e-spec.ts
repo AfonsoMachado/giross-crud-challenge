@@ -5,7 +5,7 @@ import { AppModule } from '../src/app.module';
 import { generateUser } from './utils/faker-data';
 import { UsersService } from '../src/users/services/users.service';
 import { mockService } from './utils/mock-service';
-import { registerAndAuthUser } from './utils/auth-user';
+import { authAdmin } from './utils/auth-user';
 
 describe('AppController (e2e)', () => {
   let app: INestApplication;
@@ -39,13 +39,16 @@ describe('AppController (e2e)', () => {
       .send(user)
       .expect(201)
       .then((response) => {
-        delete user.password;
         expect(response.body).toMatchObject(user);
       });
   });
 
   it('/users (GET)', async () => {
-    const { user, token } = await registerAndAuthUser();
+    const { token } = await authAdmin();
+    const user = await request(app.getHttpServer())
+      .post('/users')
+      .send(generateUser())
+      .then((response) => response.body);
 
     await request(app.getHttpServer())
       .get('/users')
@@ -57,7 +60,11 @@ describe('AppController (e2e)', () => {
   });
 
   it('/users/:id (GET)', async () => {
-    const { user, token } = await registerAndAuthUser();
+    const { token } = await authAdmin();
+    const user = await request(app.getHttpServer())
+      .post('/users')
+      .send(generateUser())
+      .then((response) => response.body);
 
     await request(app.getHttpServer())
       .get(`/users/${user.id}`)
@@ -69,7 +76,11 @@ describe('AppController (e2e)', () => {
   });
 
   it('/users/:id (DELETE)', async () => {
-    const { user, token } = await registerAndAuthUser();
+    const { token } = await authAdmin();
+    const user = await request(app.getHttpServer())
+      .post('/users')
+      .send(generateUser())
+      .then((response) => response.body);
 
     await request(app.getHttpServer())
       .delete(`/users/${user.id}`)
@@ -83,7 +94,12 @@ describe('AppController (e2e)', () => {
   });
 
   it('/users/:id (PATCH)', async () => {
-    const { user, token } = await registerAndAuthUser();
+    const { token } = await authAdmin();
+
+    const user = await request(app.getHttpServer())
+      .post('/users')
+      .send(generateUser())
+      .then((response) => response.body);
 
     const userUpdated = generateUser();
 
@@ -100,7 +116,11 @@ describe('AppController (e2e)', () => {
   });
 
   it('/users/:id (GET) - Errors (404/401)', async () => {
-    const { user, token } = await registerAndAuthUser();
+    const { token } = await authAdmin();
+    const user = await request(app.getHttpServer())
+      .post('/users')
+      .send(generateUser())
+      .then((response) => response.body);
 
     await request(app.getHttpServer())
       .get(`/users/${user.id}`)
@@ -123,7 +143,11 @@ describe('AppController (e2e)', () => {
   });
 
   it('/users/:id (DELETE) - Errors (404/401)', async () => {
-    const { user, token } = await registerAndAuthUser();
+    const { token } = await authAdmin();
+    const user = await request(app.getHttpServer())
+      .post('/users')
+      .send(generateUser())
+      .then((response) => response.body);
 
     await request(app.getHttpServer())
       .delete(`/users/${user.id}`)
@@ -146,7 +170,11 @@ describe('AppController (e2e)', () => {
   });
 
   it('/users/:id (PATCH) - Errors (404/401)', async () => {
-    const { user, token } = await registerAndAuthUser();
+    const { token } = await authAdmin();
+    const user = await request(app.getHttpServer())
+      .post('/users')
+      .send(generateUser())
+      .then((response) => response.body);
 
     const userUpdated = generateUser();
 

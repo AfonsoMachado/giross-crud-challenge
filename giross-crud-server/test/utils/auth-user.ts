@@ -1,26 +1,29 @@
-import { generateUser } from './faker-data';
 import * as request from 'supertest';
 import { Test, TestingModule } from '@nestjs/testing';
 import { AppModule } from '../../src/app.module';
 import { INestApplication } from '@nestjs/common';
+import { SeedsService } from '../../src/seeds/seeds.service';
+import { ConfigService } from '@nestjs/config';
 
-export async function registerAndAuthUser() {
+export async function authAdmin() {
   const moduleFixture: TestingModule = await Test.createTestingModule({
     imports: [AppModule],
   }).compile();
 
   const app: INestApplication = moduleFixture.createNestApplication();
   await app.init();
+  await app.get<SeedsService>(SeedsService).start();
+  const configService = app.get(ConfigService) as ConfigService<any>;
 
-  const userToRegister = generateUser();
-  const user = await request(app.getHttpServer())
-    .post('/users')
-    .send(userToRegister)
-    .then((response) => response.body);
   const token = await request(app.getHttpServer())
     .post('/auth')
-    .send(userToRegister)
-    .then((response) => response.body.access_token);
+    .send({
+      email: configService.get('USER_ADMIN_EMAIL'),
+      password: configService.get('USER_ADMIN_PASS'),
+    })
+    .then((response) => {
+      return response.body.access_token;
+    });
 
-  return { user, token };
+  return { token };
 }

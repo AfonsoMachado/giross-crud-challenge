@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication, ValidationPipe } from '@nestjs/common';
 import * as request from 'supertest';
 import { AppModule } from './../src/app.module';
-import { registerAndAuthUser } from './utils/auth-user';
+import { authAdmin } from './utils/auth-user';
 
 describe('AppController (e2e)', () => {
   let app: INestApplication;
@@ -25,7 +25,7 @@ describe('AppController (e2e)', () => {
   });
 
   it('/test (GET)', async () => {
-    const { token } = await registerAndAuthUser();
+    const { token } = await authAdmin();
 
     return await request(app.getHttpServer())
       .get('/auth/test')
