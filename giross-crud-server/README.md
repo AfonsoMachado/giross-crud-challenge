@@ -77,6 +77,12 @@ DB_USERNAME=<YOUR_DB_USERNAME>
 DB_PASSWORD=<YOUR_DB_PASSWORD>
 # Nome do banco de dados (Deve ser criado previamente para o correto funcionamento)
 DB_NAME='giross_challenge'
+# Nome do banco de dados de teste (Deve ser criado previamente para o correto funcionamento)
+DB_TEST_NAME='giross_challenge_test'
+
+# Usuário admin adicionado ao projeto automaticamente para uso das rotas autenticadas.
+USER_ADMIN_EMAIL=admin@giross.com
+USER_ADMIN_PASS=admingiross
 ```
 
 ## :fire: Executando o projeto
