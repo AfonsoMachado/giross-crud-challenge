@@ -13,7 +13,7 @@ export class CustomerReadComponent implements OnInit {
 
   customers: Customer[] = [];
 
-  displayedColumns = ['name', 'email', 'phone', 'sex', 'action'];
+  displayedColumns = ['name', 'email', 'phone', 'sex', 'createdAt', 'action'];
 
   ngOnInit(): void {
     this.customersService.read().subscribe({
@@ -28,5 +28,13 @@ export class CustomerReadComponent implements OnInit {
         }
       },
     });
+  }
+
+  getFormattedDate(strDate: string, separator = '/'): string {
+    const date = new Date(strDate);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return day + separator + month + separator + year;
   }
 }
