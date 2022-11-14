@@ -1,27 +1,66 @@
-# GirossCrudWeb
+<table align="center"><tr><td align="center" width="9999">
+<a href="https://giross.com.br/" target="blank"><img src="https://giross.com.br/assets/images/logo2.png" width="150" alt="Nest Logo" /></a>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.8.
+<h2>CRUD de usuários com autenticação JWT</h2>
 
-## Development server
+<p align="center">
+  <a href="#descrição-do-projeto">Descrição do Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#computer-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#bookmark-variáveis-de-ambiente">Variáveis de Ambiente</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#fire-executando-o-projeto">Executando o Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+</p>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+</td></tr>
+</table>
 
-## Code scaffolding
+## Descrição do Projeto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Este projeto é um frontend para gerenciamento de uma API de cadastros de usuários, desenvolvido no processo seletivo de contratação da empresa [Giross](https://giross.com.br/). Foi completamente construído usando o framework [Angular](https://angular.io/) e seus módulos para auxílio no desenvolvimento.
 
-## Build
+## :computer: Tecnologias
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Tecnologias utilizadas para o desenvolvimento:
 
-## Running unit tests
+- [Angular](https://angular.io)
+- [Angular Material](https://material.angular.io/)
+- [Node.js](https://nodejs.org/en/)
+- [npm](https://www.npmjs.com/)
+- [RxJS](https://rxjs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## :bookmark: Variáveis de ambiente 
 
-## Running end-to-end tests
+As variáveis de ambiente para este projeto estão localizadas no arquivo /src/environments/environment.ts, e podem ser configuradas alterando o conteúdo deste arquivo.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+```javascript
+// Modo de desenvolvimento
+production: false,
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+// URL da API
+baseUrl: 'http://localhost:3000',
+```
+
+## :fire: Executando o projeto
+
+### Requisitos Necessários
+
+- [Node.js](https://nodejs.org/en/) (Foi utilizada a versão 18.12.1 durante o desenvolvimento)
+- [npm](https://www.npmjs.com/) ou [Yarn](https://classic.yarnpkg.com/)
+
+**Instalação e execução**
+
+```bash
+# Instale todas as dependências necessárias:
+$ npm install
+
+# Para iniciar o servidor de desenvolvimento do Angular:
+$ npm run start
+
+# Caso queira iniciar o servidor da API em modo assistido:
+$ npm run start:dev
+```
+
+- Após isso, o projeto pode ser acessado a partir da URL http://localhost:4200
+
+<p align="center">Feito com 💜 por <strong><a href="https://www.linkedin.com/in/AfonsoMachado/">Afonso Machado</a> 🥰 </strong> </p>

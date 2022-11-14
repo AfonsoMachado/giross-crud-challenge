@@ -91,7 +91,7 @@ USER_ADMIN_PASS=admingiross
 
 - [Node.js](https://nodejs.org/en/) (Foi utilizada a versão 18.12.1 durante o desenvolvimento)
 - [npm](https://www.npmjs.com/) ou [Yarn](https://classic.yarnpkg.com/)
-- SGBD MySQL com o banco de dados pré criado, com o nome indicado nas variáveis de ambiente (Foi utilizado o [XAMPP](https://www.apachefriends.org/pt_br/index.html) durante o desenvolvimento)
+- SGBD MySQL com os banco de dados de produção e testes pré criados, com o nome indicado nas variáveis de ambiente (Foi utilizado o [XAMPP](https://www.apachefriends.org/pt_br/index.html) durante o desenvolvimento)
 
 **Instalação e execução**
 
