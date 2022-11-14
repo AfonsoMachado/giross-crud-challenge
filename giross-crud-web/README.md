@@ -55,10 +55,7 @@ baseUrl: 'http://localhost:3000',
 $ npm install
 
 # Para iniciar o servidor de desenvolvimento do Angular:
-$ npm run start
-
-# Caso queira iniciar o servidor da API em modo assistido:
-$ npm run start:dev
+$ npm start
 ```
 
 - Após isso, o projeto pode ser acessado a partir da URL http://localhost:4200, onde será possível realizar o login na plataforma utilizando as credenciais de administrador configuradas nas [variáveis de ambiente da API](https://github.com/AfonsoMachado/giross-crud-challenge/tree/master/giross-crud-server#bookmark-vari%C3%A1veis-de-ambiente).
