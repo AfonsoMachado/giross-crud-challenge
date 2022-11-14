@@ -60,4 +60,6 @@ $ npm start
 
 - Após isso, o projeto pode ser acessado a partir da URL http://localhost:4200, onde será possível realizar o login na plataforma utilizando as credenciais de administrador configuradas nas [variáveis de ambiente da API](https://github.com/AfonsoMachado/giross-crud-challenge/tree/master/giross-crud-server#bookmark-vari%C3%A1veis-de-ambiente).
 
+---
+
 <p align="center">Feito com 💜 por <strong><a href="https://www.linkedin.com/in/AfonsoMachado/">Afonso Machado</a> 🥰 </strong> </p>
